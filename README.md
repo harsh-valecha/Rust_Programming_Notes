@@ -131,3 +131,93 @@ fn main() {
 x is :4
 x is :hello
 ```
+
+Defining Constants -
+**Naming convention** - All upper case separated by underscores
+
+```
+fn main() {
+    const SECONDS_IN_MINUTES:u32 = 60 ; // u32 - unsigned integer 32
+    println!("{}",SECONDS_IN_MINUTES);
+}
+```
+
+No Reassignment allowed -
+
+```
+fn main() {
+    const SECONDS_IN_MINUTES:u32 = 60 ; // u32 - unsigned integer 32
+    const SECONDS_IN_MINUTES:u32 = 100 ; // no reassignment
+    println!("{}",SECONDS_IN_MINUTES);
+}
+```
+
+primitive data types - scalar data type - single value like integer or boolean
+
+```
+fn main() {
+ let x:i32 = 2 ; // 32 bits integer
+ // let x = 2 -- this is bydefault i32 only
+
+ /*
+    i8 , i16 ..... i128
+ */
+ let x = -32; // -ve is allowed for i32
+ // unsigned integer cannot have negative number
+
+ /*
+ u8 range -> 0 to 2^8-1
+ i8 range -> 2^7 to 2^7-1
+ */
+
+}
+```
+
+f32 - floating 32
+f64
+
+**default used for implicit types is f64**
+
+```
+fn main() {
+
+    let floating_point:f32 = 23.32;
+    println!("number is :{}",floating_point);
+}
+```
+
+Boolean is a true or false -
+
+```
+fn main() {
+    let true_or_false:bool = true;
+    println!("{}",true_or_false); // while printing always need to print like "{}"
+    let true_or_false:bool = false;
+    println!("{}",true_or_false);
+}
+```
+
+char -
+
+```
+fn main() {
+    let letter: char = 'o';
+    println!("{}",letter);
+}
+```
+
+compound data types -
+
+tuple - fixed length sequence of elements
+
+normal tuple creation and printing the value
+
+```
+fn main() {
+    let tup :(i32,bool,char)= (1,true,'s');
+    println!("{:?}",tup); // note here {} will not work
+}
+
+for each element printed in separate lines use -
+println!("{:#?}",tup);
+```

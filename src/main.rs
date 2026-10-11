@@ -1,6 +1,4 @@
 fn main() {
-    let x = 4;
-    println!("x is :{}",x);
-    let x = "hello";
-    println!("x is :{}",x);
+    let tup :(i32,bool,char)= (1,true,'s');
+    println!("{:?}",tup);
 }
