@@ -718,3 +718,15 @@ fn main(){
     println!("{}",add_numbers(10,12));
 }
 ```
+
+## Creating a string using from
+
+```
+fn main(){
+    let string = String::from("hello");
+    println!("{}",string);
+}
+```
+
+we store fixed size data in stack and dynamic size
+data in heap
