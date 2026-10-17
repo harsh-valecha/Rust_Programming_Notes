@@ -1,7 +1,14 @@
 fn main(){
-    let x = 32 as i64;
-    let y = 12 as i32;
+    let food = "cookie";
 
-    let z = x / (y as i64);
-    println!("{}",z);
+    if food != "cookie"{
+        println!("I Like cookies too!");
+    }
+    else if food =="cookie"{
+        println!("OMG you like coookies");
+    }
+    else{
+        println!("Oh thats too bad");
+    }
+
 }

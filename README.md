@@ -441,3 +441,163 @@ fn main(){
     println!("{}",z);
 }
 ```
+
+one more way of writing numbers with underscore -
+
+```
+fn main(){
+    let x = 127_000 as i64;
+    let y = 10_i32;
+
+    let z = x as i32 / y;
+    println!("{}",z);
+}
+```
+
+Taking integer input and printing -
+
+```
+use std::io;
+
+fn main(){
+    let mut input  = String::new();
+    io::stdin().read_line(&mut input).expect("expected to readline");
+    let int_input:i64 = input.trim().parse().unwrap();
+    println!("{}",int_input);
+}
+```
+
+comparision operators -
+
+< , > , <= , >= , != , ==
+
+example -
+
+```
+
+fn main(){
+let cond = 2 < 3;
+println!("{}",cond);
+
+}
+
+```
+
+operands on left and right hand side should be of same
+types -
+
+otherwise we get error like these
+error[E0308]: mismatched types
+--> src/main.rs:2:21
+|
+2 | let cond = 2 <= 2.2;
+| ^^^ expected integer, found floating-point number
+
+```
+fn main(){
+    let cond = 2 <= 2.2;
+    println!("{}",cond);
+
+}
+```
+
+fix -
+
+```
+fn main(){
+    let cond = (2 as f32) <= 2.2;
+    println!("{}",cond);
+
+}
+```
+
+## Compound condition
+
+AND - &&
+OR - ||
+NOT - !
+
+Examples -
+
+```
+fn main(){
+    let cond = (2 as f32) <= 2.2;
+    let cond2 = false && cond;
+    println!("{}",cond2);
+
+}
+
+output - false
+```
+
+```
+fn main(){
+    let cond = (2 as f32) <= 2.2;
+    let cond2 = false || cond;
+    println!("{}",cond2);
+
+}
+output - true
+```
+
+```
+fn main(){
+
+    let cond2 = false || !false;
+    println!("{}",cond2);
+
+}
+output - true
+```
+
+precedance - ! && ||
+
+## Control flow -
+
+If statement -
+
+```
+fn main(){
+    let food = "cookie";
+
+    if food == "cookie"{
+        println!("I Like cookies too!");
+    }
+
+}
+```
+
+if else -
+
+```
+fn main(){
+    let food = "cookie";
+
+    if food != "cookie"{
+        println!("I Like cookies too!");
+    }
+    else{
+        println!("Oh thats too bad");
+    }
+
+}
+```
+
+if else else if -
+
+```
+fn main(){
+    let food = "cookie";
+
+    if food != "cookie"{
+        println!("I Like cookies too!");
+    }
+    else if food =="cookie"{
+        println!("OMG you like coookies");
+    }
+    else{
+        println!("Oh thats too bad");
+    }
+
+}
+```
