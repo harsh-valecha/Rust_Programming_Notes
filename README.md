@@ -601,3 +601,120 @@ fn main(){
 
 }
 ```
+
+# functions
+
+```
+fn main(){
+    println!("Hello world");
+    test_one();
+}
+fn test_one(){ // use snake case in naming of functions
+    println!("Test has been called ...");
+}
+
+output -
+Hello world
+Test has been called ...
+
+```
+
+This works fine as well-
+
+```
+fn test_one(){ // use snake case in naming of functions
+    println!("Test has been called ...");
+}
+fn main(){
+    println!("Hello world");
+    test_one();
+}
+```
+
+## Function parameters -
+
+```
+fn add_numbers(a:i32,b:i32){
+    println!("The sum is :{}",a+b);
+}
+fn main(){
+    println!("Hello world");
+    add_numbers(23,44);
+}
+
+op -
+Hello world
+The sum is :67
+```
+
+## Expression vs statement -
+
+statment can be as simple as a simple line like let x = 30; that dont return anything
+
+while expression is something that returns some value
+following are expressions -
+
+```
+println!("hello");
+add_numbers(20,30); // this is also expression
+
+another example -
+
+fn main(){
+    let number = {
+        let x = 3;
+        x + 1
+    };
+    println!("{}",number);
+}
+```
+
+## returning values from function -
+
+```
+fn main(){
+    let result = add_numbers(23,44);
+    println!("{}",result);
+}
+fn add_numbers(x:i32 , y:i32) -> i32{
+    x + y // just add a expression at end will return , keep without semicolon
+}
+```
+
+This one works fine as well -
+
+```
+fn main(){
+    println!("{}",add_numbers(12,13));
+}
+fn add_numbers(x:i32 , y:i32) -> i32{
+    x + y // just add a expression at end will return keep without semicolon
+}
+```
+
+return keyword is also present -
+
+```
+fn main(){
+    println!("{}",add_numbers(12,13));
+}
+fn add_numbers(x:i32 , y:i32) -> i32{
+    return x + y ;
+}
+```
+
+one more example -
+
+```
+fn add_numbers(a:i32,b:i32)->i32{
+    let result:i32 = a+b;
+    if result > 10{
+        return result - 10;
+    }
+    return result;
+}
+fn main(){
+    println!("{}",add_numbers(2,3));
+    println!("{}",add_numbers(10,12));
+}
+```

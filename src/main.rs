@@ -1,14 +1,11 @@
+fn add_numbers(a:i32,b:i32)->i32{
+    let result:i32 = a+b;
+    if result > 10{
+        return result - 10;
+    }
+    return result;
+}
 fn main(){
-    let food = "cookie";
-
-    if food != "cookie"{
-        println!("I Like cookies too!");
-    }
-    else if food =="cookie"{
-        println!("OMG you like coookies");
-    }
-    else{
-        println!("Oh thats too bad");
-    }
-
+    println!("{}",add_numbers(2,3));
+    println!("{}",add_numbers(10,12));
 }
