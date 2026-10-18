@@ -803,6 +803,23 @@ fn main() {
 op - The result is 20
 ```
 
+For Loop step by -
+
+```
+fn main(){
+    for i in (1..10).step_by(2){
+        println!("{}",i);
+    }
+}
+
+op -
+1
+3
+5
+7
+9
+```
+
 Match -
 
 ```
