@@ -730,3 +730,97 @@ fn main(){
 
 we store fixed size data in stack and dynamic size
 data in heap
+
+# Loops
+
+1. While Loop -
+
+```
+fn main(){
+    let a = [1,2,3,4,5,6];
+    let mut index = 0;
+    while index < 5{
+        println!("The value at {} is :{}",index,a[index]);
+        index +=1;
+    }
+    println!("Outside the loop");
+}
+op -
+The value at 0 is :1
+The value at 1 is :2
+The value at 2 is :3
+The value at 3 is :4
+The value at 4 is :5
+Outside the loop
+```
+
+2. For loop -
+
+```
+fn main(){
+    let a = [1,2,3,4,5,6];
+    for element in a {
+        println!("the value is :{element}");
+    }
+}
+op -
+the value is :1
+the value is :2
+the value is :3
+the value is :4
+the value is :5
+the value is :6
+```
+
+Priting the array elements in reverse -
+
+```
+fn main(){
+    let a = [1,2,3,4,5,6];
+    // `rev()` is an iterator method; turn the array into an iterator first.
+    for element in a.iter().rev() {
+        println!("the value is :{element}");
+    }
+}
+```
+
+3. loop -
+
+```
+fn main() {
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    println!("The result is {result}");
+}
+op - The result is 20
+```
+
+Match -
+
+```
+fn main() {
+  let day = 4;
+
+  let result = match day {
+    1 => "Monday",
+    2 => "Tuesday",
+    3 => "Wednesday",
+    4 => "Thursday",
+    5 => "Friday",
+    6 => "Saturday",
+    7 => "Sunday",
+    _ => "Invalid day.",
+  };
+
+  println!("{}", result);
+}
+op - Thursday
+```
