@@ -647,6 +647,18 @@ Hello world
 The sum is :67
 ```
 
+one more example -
+
+```
+fn greet(name: &str){
+    println!("Hello {name}");
+}
+fn main(){
+   greet("Kamlesh");
+}
+op - Hello Kamlesh
+```
+
 ## Expression vs statement -
 
 statment can be as simple as a simple line like let x = 30; that dont return anything
@@ -840,4 +852,58 @@ fn main() {
   println!("{}", result);
 }
 op - Thursday
+```
+
+## Creating Strings -
+
+Default when string created it is with &str (immutable), while with String (mutable)
+This can be done using 2 methods - String::from("somevalue") or "something".to_string()
+Note - strings need to be in double quotes
+
+```
+fn main(){
+    println!("{}",String::from("Kamlapati"));
+    let str2 = "Helo world".to_string();
+    println!("{}",str2);
+}
+```
+
+strings are mutable so it can be changed if declared with mut
+
+```
+fn main(){
+    let mut stru = String::from("Hello");
+    stru.push_str(" World!");
+    println!("{stru}");
+}
+op - Hello World!
+```
+
+## Concatenating strings -
+
+1. using !format macro -
+
+```
+fn main(){
+    let s1 = String::from("Hello");
+    let s2 = String::from("World");
+    let s3 = String::from("Jai Hind");
+    let result = format!("{} {} {}",s1,s2,s3);
+    println!("{result}");
+
+}
+op - Hello World Jai Hind
+```
+
+2. directly using + but generally not used as it gets messy
+
+```
+fn main(){
+    let s1 = String::from("Hello");
+    let s2 = "World"; // here s2 and s3 are declared with default &str as only first string can be mutable
+    let s3 = "Jai Hind";
+    let result = s1+" "+s2+" "+s3;
+    println!("{result}");
+
+}
 ```

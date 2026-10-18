@@ -1,5 +1,8 @@
 fn main(){
-    for i in (1..10).step_by(2){
-        println!("{}",i);
-    }
+    let s1 = String::from("Hello");
+    let s2 = "World"; // here s2 and s3 are declared with default &str as only first string can be mutable 
+    let s3 = "Jai Hind";
+    let result = s1+" "+s2+" "+s3;
+    println!("{result}");
+
 }
