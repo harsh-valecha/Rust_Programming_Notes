@@ -1,7 +1,4 @@
 fn main(){
-    let mut name = String::from("John");
-    let name_ref = &mut name;
-    name_ref.push_str(" Doe");
-
-    println!("{}", name_ref); // John Doe
+    let fruits = ["apple","banana","Orange"];
+    println!("{:?}",fruits);
 }

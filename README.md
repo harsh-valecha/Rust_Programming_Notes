@@ -977,3 +977,75 @@ fn main() {
 }
 op - b:3 and a:3
 ```
+
+## Arrays again -
+
+arrays are fixed sized list of values all of same type
+to access an array we use the index number
+created with [] and values of same type in it with comma separation
+
+```
+fn main(){
+    let fruits = ["apple","banana","Orange"];
+    println!("last fruit is :{}",fruits[2]);
+}
+op -last fruit is :Orange
+```
+
+printing length of an array -
+
+```
+fn main(){
+    let fruits = ["apple","banana","Orange"];
+    println!("length of the array is:{}",fruits.len());
+}
+```
+
+changing the values of array elements -
+
+```
+fn main(){
+    let mut fruits = ["apple","banana","Orange"];
+    println!("The second fruit is :{}",fruits[1]);
+    fruits[1] = "cheeku";
+    println!("The second fruit is :{}",fruits[1]);
+}
+
+op -
+The second fruit is :banana
+The second fruit is :cheeku
+```
+
+looping through an array -
+
+```
+fn main(){
+    let fruits = ["apple","banana","Orange"];
+    for fruit in fruits{
+        println!("The current fruit is :{}",fruit);
+    }
+}
+
+op -
+The current fruit is :apple
+The current fruit is :banana
+The current fruit is :Orange
+```
+
+priting all the array elements -
+
+```
+fn main(){
+    let fruits = ["apple","banana","Orange"];
+    println!("{:?}",fruits);
+}
+["apple", "banana", "Orange"]
+```
+
+## Vectors -
+
+vectors are resizeable arrays , it can grow and shring in size .
+
+```
+
+```
