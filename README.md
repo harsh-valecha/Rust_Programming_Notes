@@ -39,8 +39,10 @@ cargo check
 
 ## Comments in rust -
 
+```
 Single line //
-multiline /_ value _/
+multiline /* value */
+```
 
 **Need a semicolon at end of line to end statement**
 
@@ -906,4 +908,72 @@ fn main(){
     println!("{result}");
 
 }
+```
+
+## Ownership -
+
+ownership of value for simple datatypes like int , bool, char can be transfered directly
+but for string need to use .clone method -
+
+```
+fn main(){
+    let a  = String::from("Hello");
+    let b = a.clone();
+    println!("b:{b} and a:{a}");
+}
+op - b:Hello and a:Hello
+```
+
+## Borrowing -
+
+when we want to borrow the value from a variable instead of transferring the ownership
+
+example -
+
+```
+fn main(){
+    let a  = String::from("Hello");
+    let b = &a;
+    println!("b:{b} and a:{a}");
+}
+op - b:Hello and a:Hello
+```
+
+another example with value update -
+
+```
+fn main(){
+    let mut name = String::from("John");
+    let name_ref = &mut name;
+    name_ref.push_str(" Doe");
+
+    println!("{}", name_ref); // John Doe
+}
+op - John Doe
+```
+
+one integer example -
+
+```
+fn main(){
+    let a  = 2;
+    let mut b = a;
+    b += 1;
+    println!("b:{b} and a:{a}");
+}
+op - b:3 and a:2
+```
+
+when b provided as reference -
+
+```
+fn main() {
+    let mut a = 2;
+    let b = &mut a;
+    *b += 1;
+
+    let b_val = *b; // copies the integer value out
+    println!("b:{b_val} and a:{a}");
+}
+op - b:3 and a:3
 ```
